@@ -1,0 +1,11 @@
+---
+- name: Ping remote servers
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Ping the server
+      ansible.builtin.ping:
+      register: ping_output
+    - name: display ping result
+      ansible.builtin.debug:
+        var: ping_output
